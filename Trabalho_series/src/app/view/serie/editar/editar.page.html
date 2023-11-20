@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar id="a1">
+    <ion-title id="titulo">Lista de Series</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-list>
+    <ion-item>
+      <ion-toggle (ionChange)="habilitar()">Habilitar Edição</ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Nome"  placeholder="Insira o nome da Serie" [(ngModel)]="nome" disabled={{edicao}}></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Lançamento" type="number" placeholder="Insira o ano de estreia" [(ngModel)]="lancamento" disabled={{edicao}}></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="diretor"  placeholder="Insira o diretor" [(ngModel)]="diretor" disabled={{edicao}}></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="temporadas" type="number" placeholder="Insira a quantidade de temporadas" [(ngModel)]="temporadas" disabled={{edicao}}></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select label="Gênero" placeholder="Selecione" [(ngModel)]="genero" disabled={{edicao}}>
+        <ion-select-option value="0">Drama</ion-select-option>
+        <ion-select-option value="1">Comédia</ion-select-option>
+        <ion-select-option value="2">Ação</ion-select-option>
+        <ion-select-option value="3">Ficção Científica</ion-select-option>
+        <ion-select-option value="4">Fantasia</ion-select-option>
+        <ion-select-option value="5">Terror</ion-select-option>
+        <ion-select-option value="6">Mistério</ion-select-option>
+        <ion-select-option value="7">Crime</ion-select-option>
+        <ion-select-option value="8">Suspense</ion-select-option>
+        <ion-select-option value="9">Aventura</ion-select-option>
+        <ion-select-option value="10">Animação</ion-select-option>
+        <ion-select-option value="11">Documentário</ion-select-option>
+        <ion-select-option value="12">Romance</ion-select-option>
+        <ion-select-option value="13">Histórico</ion-select-option>
+        <ion-select-option value="14">Família</ion-select-option>
+        <ion-select-option value="15">Política</ion-select-option>
+        <ion-select-option value="16">Super-heróis</ion-select-option>
+        <ion-select-option value="17">Reality Show</ion-select-option>
+        <ion-select-option value="18">Musical</ion-select-option>
+        <ion-select-option value="19">Comédia Dramática</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <img src="{{this.itens.downloadURL}}" />
+    <ion-item>
+      <ion-button size="default" color="success" shape="round" disabled="{{edicao}}">
+        <input type="file" (change)="uploadFile($event.target)" />
+      </ion-button>
+    </ion-item>
+     <ion-button expand="full" (click)="editar()" disabled="{{edicao}}">Salvar</ion-button>
+     <ion-button expand="full" (click)="excluir()" color="danger" disabled="{{edicao}}">Excluir</ion-button>
+  </ion-list>
+</ion-content>

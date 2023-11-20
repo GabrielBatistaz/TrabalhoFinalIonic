@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista de Séries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="cadastrar" (ngSubmit)="cadastro()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input formControlName="nome" placeholder="Insira o nome da Serie"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Lançamento</ion-label>
+        <ion-input formControlName="lancamento" type="number" placeholder="Insira o ano de estreia"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Diretor</ion-label>
+        <ion-input formControlName="diretor" type="text" placeholder="Insira o Diretor"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Temporadas</ion-label>
+        <ion-input formControlName="temporadas" type="number" placeholder="Insira a quantidade de temporadas"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gênero</ion-label>
+        <ion-select formControlName="genero" placeholder="Selecione">
+          <ion-select-option value="0">Drama</ion-select-option>
+          <ion-select-option value="1">Comédia</ion-select-option>
+          <ion-select-option value="2">Ação</ion-select-option>
+          <ion-select-option value="3">Ficção Científica</ion-select-option>
+          <ion-select-option value="4">Fantasia</ion-select-option>
+          <ion-select-option value="5">Terror</ion-select-option>
+          <ion-select-option value="6">Mistério</ion-select-option>
+          <ion-select-option value="7">Crime</ion-select-option>
+          <ion-select-option value="8">Suspense</ion-select-option>
+          <ion-select-option value="9">Aventura</ion-select-option>
+          <ion-select-option value="10">Animação</ion-select-option>
+          <ion-select-option value="11">Documentário</ion-select-option>
+          <ion-select-option value="12">Romance</ion-select-option>
+          <ion-select-option value="13">Histórico</ion-select-option>
+          <ion-select-option value="14">Família</ion-select-option>
+          <ion-select-option value="15">Política</ion-select-option>
+          <ion-select-option value="16">Super-heróis</ion-select-option>
+          <ion-select-option value="17">Reality Show</ion-select-option>
+          <ion-select-option value="18">Musical</ion-select-option>
+          <ion-select-option value="19">Comédia Dramática</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-button size="default" color="success" shape="round">
+          <input type="file" (change)="uploadFile($event)"  />
+        </ion-button>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!cadastrar.valid">Cadastrar Série</ion-button>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,32 @@
+#a1{
+  background-image: linear-gradient(90deg , rgb(109, 109, 209), rgb(255, 255, 255) );
+  border: 1px solid #6361c7;
+  border-radius: 10px;
+}
+#title{
+  color: rgb(33, 56, 133);
+  font-style:italic;
+  display: flex;
+}
+#item{
+  font-style: italic;
+  text-align:left;
+  padding: 4px;
+  border: 1px solid #6361c7;
+  border-radius: 10px; 
+  margin-bottom: 10px;
+}
+#deslog{
+  width: 6vw; 
+  height: 6vw; 
+  position: absolute; 
+  right: 0;
+  text-align: center;
+  justify-self: center;
+}
+ion-title {
+  background-color: rgb(32, 164, 204);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+  color: black;
+}
